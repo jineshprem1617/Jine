@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #fce4ec; color: #880e4f; }
+        header { text-align: center; padding: 50px; }
+        .gallery { display: flex; justify-content: space-around; }
+        .gallery img { width: 30%; height: auto; border-radius: 15px; }
+        .modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); }
+        .modal-content { background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; }
+        .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; }
+        .close:hover, .close:focus { color: red; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Happy Valentine's Day!</h1>
+        <p>Celebrate love with us.</p>
+    </header>
+    <section id="roses">
+        <h2>Roses</h2>
+        <p>Roses are red, violets are blue...</p>
+    </section>
+    <section id="image-gallery">
+        <h2>Image Gallery</h2>
+        <div class="gallery">
+            <img src="rose1.jpg" alt="Roses">
+            <img src="rose2.jpg" alt="Roses">
+            <img src="rose3.jpg" alt="Roses">
+        </div>
+    </section>
+    <section id="wishes">
+        <h2>Wishes</h2>
+        <p>May your day be filled with love and happiness!</p>
+    </section>
+    <section id="quotes">
+        <h2>Quotes</h2>
+        <blockquote>
+            <p>"Love is not about how many days, months, or years you have been together. Love is about how much you love each other every single day."</p>
+        </blockquote>
+    </section>
+    <section id="special-message">
+        <h2>Special Message</h2>
+        <p>To my special someone, you mean the world to me!</p>
+    </section>
+    <section id="gift-box">
+        <h2>Gift Box</h2>
+        <button id="giftBtn">Open Gift</button>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeBtn">&times;</span>
+                <p>Your special gift is love!</p>
+            </div>
+        </div>
+    </section>
+    <script>
+        var modal = document.getElementById('myModal');
+        var btn = document.getElementById('giftBtn');
+        var span = document.getElementById('closeBtn');
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
